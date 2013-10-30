@@ -11,24 +11,26 @@ describe('amp.Stream', function(){
 
     var n = 0;
 
-    stream.on('data', function(msg){
+    stream.on('data', function(buf){
+      var msg = amp.decode(buf).map(function(b){ return b.toString(); });
+
       switch (n++) {
         case 0:
           msg.should.have.length(1);
-          msg[0].toString().should.equal('tobi');
+          msg[0].should.equal('tobi');
           break;
         
         case 1:
           msg.should.have.length(2);
-          msg[0].toString().should.equal('loki');
-          msg[1].toString().should.equal('abby');
+          msg[0].should.equal('loki');
+          msg[1].should.equal('abby');
           break;
 
         case 2:
           msg.should.have.length(3);
-          msg[0].toString().should.equal('manny');
-          msg[1].toString().should.equal('luna');
-          msg[2].toString().should.equal('ewald');
+          msg[0].should.equal('manny');
+          msg[1].should.equal('luna');
+          msg[2].should.equal('ewald');
           done();
           break;
       }
