@@ -27,7 +27,8 @@ console.log(msg);
 
   All multi-byte integers are big endian. The `version` and `argc` integers
   are stored in the first byte, followed by a sequence of zero or more
-  `<length>` / `<data>` pairs, where `length` is a 16-bit unsigned int.
+  `<length>` / `<data>` pairs, where `length` is a 16-bit unsigned int, meaning
+  each argument may be a _maximum_ of __65536__ bytes.
 
 ```
       0          1 2      <length>   ...
