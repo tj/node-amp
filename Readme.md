@@ -30,10 +30,10 @@ console.log(msg);
   `<length>` / `<data>` pairs, where `length` is a 32-bit unsigned integer.
 
 ```
-      0          1 2      <length>   ...
-+------------+----------+----------+
-| <ver/argc> | <length> | <data>   | additional arguments
-+------------+----------+----------+
+      0        1 2 3 4     <length>    ...
++------------+----------+------------+
+| <ver/argc> | <length> | <data>     | additional arguments
++------------+----------+------------+
 ```
 
 # License
