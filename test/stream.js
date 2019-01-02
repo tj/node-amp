@@ -5,9 +5,9 @@ describe('amp.Stream', function(){
   it('should emit "data" events', function(done){
     var stream = new amp.Stream;
 
-    var a = amp.encode([new Buffer('tobi')]);
-    var b = amp.encode([new Buffer('loki'), new Buffer('abby')]);
-    var c = amp.encode([new Buffer('manny'), new Buffer('luna'), new Buffer('ewald')]);
+    var a = amp.encode([Buffer.from('tobi')]);
+    var b = amp.encode([Buffer.from('loki'), Buffer.from('abby')]);
+    var c = amp.encode([Buffer.from('manny'), Buffer.from('luna'), Buffer.from('ewald')]);
 
     var n = 0;
 
@@ -45,6 +45,6 @@ describe('amp.Stream', function(){
 
 function write(from, to) {
   for (var i = 0; i < from.length; i++) {
-    to.write(new Buffer([from[i]]));
+    to.write(Buffer.from([from[i]]));
   }
 }

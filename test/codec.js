@@ -10,7 +10,7 @@ describe('amp.encode(args...)', function(){
   })
 
   it('should support multiple args', function(){
-    var bin = amp.encode([new Buffer('hello'), new Buffer('world')]);
+    var bin = amp.encode([Buffer.from('hello'), Buffer.from('world')]);
     var msg = amp.decode(bin);
 
     msg.should.have.length(2);

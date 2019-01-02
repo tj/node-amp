@@ -12,7 +12,7 @@ $ npm install amp
 ## Example
 
 ```js
-var bin = amp.encode([new Buffer('hello'), new Buffer('world')]);
+var bin = amp.encode([Buffer.from('hello'), Buffer.from('world')]);
 var msg = amp.decode(bin);
 console.log(msg);
 ```

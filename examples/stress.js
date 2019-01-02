@@ -21,7 +21,7 @@ server.listen(3000);
 
 var client = net.connect(3000);
 
-var msg = amp.encode([new Buffer('foo'), new Buffer('bar baz')]);
+var msg = amp.encode([Buffer.from('foo'), Buffer.from('bar baz')]);
 
 function next() {
   var n = 200;
