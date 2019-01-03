@@ -22,6 +22,6 @@ server.listen(3000);
 var client = net.connect(3000);
 
 setInterval(function(){
-  var msg = amp.encode([new Buffer('thumb'), new Buffer('image data here')]);
+  var msg = amp.encode([Buffer.from('thumb'), Buffer.from('image data here')]);
   client.write(msg);
 }, 100);
